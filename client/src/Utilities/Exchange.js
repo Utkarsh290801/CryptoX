@@ -86,7 +86,7 @@ const Exchange = ({ coinAssetList: assetList, onError }) => {
 		const coinid = event.target.value;
 
 		try {
-			const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/coin/data`, {
+			const { data } = await axios.post("http://localhost:5000/coin/data", {
 				id: coinid,
 				name: true,
 				price: true,
@@ -126,7 +126,7 @@ const Exchange = ({ coinAssetList: assetList, onError }) => {
 
 		try {
 			const { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/transaction/exchange`,
+				"http://localhost:5000/transaction/exchange",
 				{
 					coinid1: fromCoin.id,
 					coinid2: toCoin.id,

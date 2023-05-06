@@ -20,7 +20,7 @@ const ForgotPassword = (props) => {
 
 		try {
 			const { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/user/forgotpassword/request`,
+			"http://localhost:5000/user/forgotpassword/request",
 				{
 					email: enteredEmail,
 				}

@@ -25,7 +25,7 @@ export default function ExchangeDetails(props) {
             setIsLoading(true);
             try {
                 const { data } = await axios.post(
-                    `${process.env.REACT_APP_SERVER_URL}/transaction/data`,
+                    "http://localhost:5000/transaction/data",
                     {
                         tid,
                     },

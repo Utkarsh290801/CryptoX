@@ -23,7 +23,7 @@ const WatchList = () => {
 				const {
 					data: { watchList: watchlist },
 				} = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/user/data`,
+					"http://localhost:5000/user/data",
 					{
 						watchList: true,
 					},
@@ -59,11 +59,11 @@ const WatchList = () => {
 			setCoins([]);
 		};
 	}, [ctx]);
-
+const url="http://localhost:5000"
 	const removeFromWatchList = async (id) => {
 		try {
 			const res = await axios.get(
-				`${process.env.REACT_APP_SERVER_URL}/user/watchlist/remove/${id}`,
+				`${url}/user/watchlist/remove/${id}`,
 				{
 					headers: {
 						Authorization: "Bearer " + ctx.token,

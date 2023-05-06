@@ -8,7 +8,7 @@ import AuthContext from "../../store/authContext";
 const CryptoItem = (props) => {
 	const ctx = useContext(AuthContext);
 	const history = useHistory();
-
+const url="http://localhost:5000"
 	let newPath = `/coins/${props.coinid}`;
 
 	const addToWatchList = async () => {
@@ -16,7 +16,7 @@ const CryptoItem = (props) => {
 
 		try {
 			const res = await axios.get(
-				`${process.env.REACT_APP_SERVER_URL}/user/watchlist/add/${coinID}`,
+				`${url}/user/watchlist/add/${coinID}`,
 				{
 					headers: {
 						Authorization: "Bearer " + ctx.token,

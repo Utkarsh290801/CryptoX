@@ -31,7 +31,7 @@ const NotificationsCenter = () => {
 
 				// Fetching notifications on first website load
 				let { data } = await axios.get(
-					`${process.env.REACT_APP_SERVER_URL}/user/notifications/get`,
+					"http://localhost:5000/user/notifications/get",
 					{
 						headers: {
 							Authorization: "Bearer " + ctx.token,

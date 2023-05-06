@@ -66,7 +66,7 @@ const SellCoin = ({ coinData, assetData, onError }) => {
 			let data;
 			if (sellMode.inr) {
 				const res = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/sell/amount`,
+				"http://localhost:5000/transaction/sell/amount",
 					{
 						amount: sellMode.inrValue,
 						coinid: coinData.id,
@@ -81,7 +81,7 @@ const SellCoin = ({ coinData, assetData, onError }) => {
 				data = res.data;
 			} else {
 				const res = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/sell/quantity`,
+					"http://localhost:5000/transaction/sell/quantity",
 					{
 						quantity: sellMode.coinValue,
 						coinid: coinData.id,

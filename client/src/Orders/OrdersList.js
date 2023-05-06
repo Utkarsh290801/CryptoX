@@ -17,7 +17,7 @@ const OrdersList = () => {
 		const fetchData = async () => {
 			try {
 				const { data } = await axios.get(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/data/orders`,
+					"http://localhost:5000/transaction/data/orders",
 					{
 						headers: {
 							Authorization: "Bearer " + ctx.token,

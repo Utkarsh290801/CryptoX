@@ -32,7 +32,7 @@ const Referral = (props) => {
 		const fetchData = async () => {
 			try {
 				const { data } = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/user/data`,
+					"http://localhost:5000/user/data",
 					{
 						name: true,
 						referralID: true,
@@ -80,7 +80,7 @@ const Referral = (props) => {
 		const emailToSendInvite = inputRefEmail.current.value;
 		try {
 			let { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/referral/invite`,
+				"http://localhost:5000/referral/invite",
 				{
 					inviteLink: link,
 					emailToSend: emailToSendInvite,

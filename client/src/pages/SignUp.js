@@ -38,8 +38,7 @@ const SignUp = (props) => {
 		const enteredMobile = inputRefMobile.current.value;
 
 		try {
-			const res = await fetch(
-				`${process.env.REACT_APP_SERVER_URL}/user/signup`,
+			const res = await fetch("http://localhost:5000/user/signup",
 				{
 					method: "POST",
 					body: JSON.stringify({

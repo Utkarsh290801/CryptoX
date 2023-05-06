@@ -23,7 +23,7 @@ const TransactionsList = () => {
 		const fetchData = async () => {
 			try {
 				const { data } = await axios.get(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/data/list`,
+				"http://localhost:5000/transaction/data/list",
 					{
 						headers: {
 							Authorization: "Bearer " + ctx.token,

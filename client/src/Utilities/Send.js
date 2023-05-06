@@ -50,7 +50,7 @@ const Send = ({ coinAssetList: assetList, onError }) => {
 	const verifyUserHandler = async () => {
 		try {
 			const { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/transaction/send/verify`,
+				"http://localhost:5000/transaction/send/verify",
 				{
 					email: email,
 				},
@@ -81,7 +81,7 @@ const Send = ({ coinAssetList: assetList, onError }) => {
 
 		try {
 			const { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/transaction/send/`,
+				"http://localhost:5000/transaction/send/",
 				{
 					coinid: selectedCoin.id,
 					email: email,

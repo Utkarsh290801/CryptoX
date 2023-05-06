@@ -29,7 +29,7 @@ const AddMoney = (props) => {
 		if (response.error) {
 			try {
 				const { data } = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/payment/failed`,
+					"http://localhost:5000/payment/failed",
 					{
 						transaction_id: transactionID,
 						razorpay_payment_id: response.error.metadata.payment_id,
@@ -67,7 +67,7 @@ const AddMoney = (props) => {
 
 		try {
 			const { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/payment/capture`,
+				"http://localhost:5000/payment/capture",
 				{
 					...response,
 					transaction_id: transactionID,
@@ -118,7 +118,7 @@ const AddMoney = (props) => {
 
 		try {
 			const { data } = await axios.post(
-				`${process.env.REACT_APP_SERVER_URL}/payment/order`,
+				"http://localhost:5000/payment/order",
 				{
 					amount: enteredAmount,
 				},

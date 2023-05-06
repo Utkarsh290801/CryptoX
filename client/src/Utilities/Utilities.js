@@ -32,7 +32,7 @@ const Utilities = () => {
 			try {
 				// Fetch id and amount of coins in assets from database
 				let { data } = await axios.get(
-					`${process.env.REACT_APP_SERVER_URL}/user/assets`,
+				"http://localhost:5000/user/assets",
 					{
 						headers: {
 							Authorization: "Bearer " + ctx.token,

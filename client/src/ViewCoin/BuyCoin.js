@@ -65,7 +65,7 @@ const BuyCoin = ({ coinData, walletBalance, onError }) => {
 			let data;
 			if (buyMode.inr) {
 				const res = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/buy/amount`,
+					"http://localhost:5000/transaction/buy/amount",
 					{
 						amount: buyMode.inrValue,
 						coinid: coinData.id,
@@ -80,7 +80,7 @@ const BuyCoin = ({ coinData, walletBalance, onError }) => {
 				data = res.data;
 			} else {
 				const res = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/buy/quantity`,
+					"http://localhost:5000/transaction/buy/quantity",
 					{
 						quantity: buyMode.coinValue,
 						coinid: coinData.id,

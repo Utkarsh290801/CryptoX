@@ -21,7 +21,7 @@ const CoinOrder = ({ onError, coinid }) => {
 			let data;
 			if (transactionMode === "buy") {
 				const res = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/buyLimit`,
+					"http://localhost:5000/transaction/buyLimit",
 					{
 						quantity: inputRefQuantity.current.value,
 						coinid: coinid,
@@ -37,7 +37,7 @@ const CoinOrder = ({ onError, coinid }) => {
 				data = res.data;
 			} else if (transactionMode === "sell") {
 				const res = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/transaction/sellLimit`,
+					"http://localhost:5000/transaction/sellLimit",
 					{
 						quantity: inputRefQuantity.current.value,
 						coinid: coinid,

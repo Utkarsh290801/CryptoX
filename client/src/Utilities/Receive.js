@@ -16,7 +16,7 @@ const Receive = ({ onError }) => {
 		const fetchData = async () => {
 			try {
 				const { data } = await axios.post(
-					`${process.env.REACT_APP_SERVER_URL}/user/data`,
+					"http://localhost:5000/user/data",
 					{
 						email: true,
 					},
